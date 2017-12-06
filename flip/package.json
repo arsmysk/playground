@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run watch",
+    "style": "npm run style:build && npm run style:watch",
+    "style:build": "node-sass --include-path src/style -o public/style -r src/style --output-style compressed",
+    "style:watch": "node-sass --include-path src/style -o public/style -wr src/style --output-style compressed",
     "script:build": "webpack",
     "script:watch": "webpack -w"
   },
