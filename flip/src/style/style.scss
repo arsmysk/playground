@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import 'math';
 
 $gemstones:
   'garnet',
@@ -22,8 +23,6 @@ $gemstones:
 
 $tan22p5: tan(22.5deg);
 $cut: 5vmin;
-
-@debug $tan22p5;
 
 #stone {
   margin-top: 5vh;
