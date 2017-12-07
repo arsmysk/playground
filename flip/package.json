@@ -7,10 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run watch",
     "style": "npm run style:build && npm run style:watch",
-    "style:build": "node-sass --include-path src/style -o public/style -r src/style --output-style compressed",
-    "style:watch": "node-sass --include-path src/style -o public/style -wr src/style --output-style compressed",
-    "script:build": "webpack",
-    "script:watch": "webpack -w"
+    "build:style": "node-sass --include-path src/style -o public/style -r src/style --output-style compressed",
+    "watch:style": "node-sass --include-path src/style -o public/style -wr src/style --output-style compressed",
+    "build:script": "webpack",
+    "watch:script": "webpack -w",
+    "build": "npm-run-all build:*",
+    "watch": "npm-run-all watch:*"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
     "webpack": "^3.10.0"
   }
 }
