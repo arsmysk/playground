@@ -11,8 +11,8 @@
     "watch:style": "node-sass --include-path src/style -o public/style -wr src/style --output-style compressed",
     "build:script": "webpack",
     "watch:script": "webpack -w",
-    "build": "npm-run-all build:*",
-    "watch": "npm-run-all watch:*"
+    "build": "npm-run-all -p build:*",
+    "watch": "npm-run-all -p watch:*"
   },
   "repository": {
     "type": "git",
