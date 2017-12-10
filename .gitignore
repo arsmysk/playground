@@ -136,5 +136,5 @@ Session.vim
 tags
 
 # Compiled Files
-flip/public/script
-flip/public/style
+*/public/*
+!*/public/*.html
