@@ -135,7 +135,6 @@ Session.vim
 # Auto-generated tag files
 tags
 
-# bundle.js style.css
-public/
-!public/index.html
-
+# Compiled Files
+flip/public/script
+flip/public/style
