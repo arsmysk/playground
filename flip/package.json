@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run watch",
+    "start": "npm run watch & browser-sync start --server --ss 'public/' --files 'public/**/*'",
     "style": "npm run style:build && npm run style:watch",
     "build:style": "node-sass --include-path src/style -o public/style -r src/style --output-style compressed",
     "watch:style": "node-sass --include-path src/style -o public/style -wr src/style --output-style compressed",
@@ -32,6 +32,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
+    "browser-sync": "^2.18.13",
     "flipping": "^0.8.0"
   }
 }
