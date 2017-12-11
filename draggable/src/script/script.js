@@ -1,7 +1,7 @@
 import { Draggable } from '@shopify/draggable';
 
-const draggable = new Draggable(document.querySelectorAll('ul'), {
-  draggable: 'li'
+const draggable = new Draggable(document.querySelectorAll('#box'), {
+  draggable: '.draggable'
 })
 
 draggable.on('drag:start', () => console.log('drag:start'))
