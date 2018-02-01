@@ -9,7 +9,10 @@
 <body>
   <div id="mycounter">
     <div v-text="count"></div>
-    <button v-on="click: countUp">Up</button>
+    <div v-text="count * 10"></div>
+    <div v-text="'(' + count + ')'"></div>
+    <div v-text="count ? count : '--'"></div>
+    <button v-on="click: count++">Up</button>
   </div>
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.4/vue.min.js"></script>
@@ -25,12 +28,6 @@
       data: {
         count: 0
       },
-      methods: {
-        // countUp: () => this.count++
-        countUp: function () {
-          this.count++;
-        }
-      }
     })
   </script>
 </body>
