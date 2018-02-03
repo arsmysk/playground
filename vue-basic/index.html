@@ -8,44 +8,42 @@
   <title>Document</title>
 
   <style>
-    [v-cloak] {
-      display: none;
-    }
-
-    .red {
-      color: red;
-    }
-
-    .bold {
-      font-weight: bold;
-    }
   </style>
 </head>
 
 <body>
-  <div v-cloak id="myapp">
-    <ul>
-      <li v-for="d in d1">{{d}}</li>
-      <li v-for="(k,d) in d2">{{k}} - {{d}}</li>
-      <li v-for="(d,index) in d3">{{index}} - {{d.name}} - {{d.score}}</li>
-    </ul>
+  <div id="myapp">
+    <p>
+      <input type="text" v-model="name"> {{name}}
+    </p>
+    <p>
+      <input type="checkbox" v-model="isAdmin"> {{isAdmin ? "admin": "guest"}}
+    </p>
+    <p>
+      <input type="radio" name="phone" v-model="phone" value="iphone">
+      <input type="radio" name="phone" v-model="phone" value="android"> {{phone}}
+    </p>
+    <p>
+      <select v-model="city">
+        <option value="tokyo">tokyo</option>
+        <option value="kyoto">kyoto</option>
+        <option value="osaka">osaka</option>
+      </select>
+      {{city}}
+    </p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
-    setTimeout(() => {
-      const vm = new Vue({
-        el: '#myapp',
-        data: {
-          d1: ['a', 'b'],
-          d2: { k1: 'v1', k2: 'v2' },
-          d3: [
-            { name: 'taguchi', score: 62 },
-            { name: 'fkoji', score: 84 }
-          ]
-        }
-      })
-    }, 500);
+    const vm = new Vue({
+      el: '#myapp',
+      data: {
+        name: 'taguchi',
+        isAdmin: true,
+        phone: 'iphone',
+        city: 'tokyo'
+      }
+    })
   </script>
 </body>
 
