@@ -11,29 +11,31 @@
     [v-cloak] {
       display: none;
     }
+
+    .red {
+      color: red;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
   </style>
 </head>
 
 <body>
   <div v-cloak id="mycounter">
-    <div v-show="showContent">{{content}}</div>
-    <div v-if="ifShowContent">{{content}}</div>
+    <div :class="{red: isRed, bold: isBold}">{{content}}</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
-    // object(ViewModel) - data/methods(Model) <--> interface(View)
-    // Model View ViewModel - MVVM
-
-    // counter
-
     setTimeout(() => {
       const vm = new Vue({
         el: '#mycounter',
         data: {
           content: 'Title',
-          showContent: false,
-          ifShowContent: false
+          isRed: true,
+          isBold: true
         },
       })
     }, 500);
