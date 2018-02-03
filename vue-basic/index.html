@@ -16,8 +16,7 @@
 
 <body>
   <div v-cloak id="mycounter">
-    <div v-text="count">Not init yet</div>
-    <button @click="countUp">Up</button>
+    <div v-html="content">Not init yet</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -31,14 +30,8 @@
       const vm = new Vue({
         el: '#mycounter',
         data: {
-          count: 0
+          content: '<h1>Title</h1>'
         },
-        methods: {
-          // countUp: () => this.count++
-          countUp() {
-            this.count++;
-          }
-        }
       })
     }, 500);
   </script>
