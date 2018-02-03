@@ -23,20 +23,27 @@
 </head>
 
 <body>
-  <div v-cloak id="mycounter">
-    <div :class="{red: isRed, bold: isBold}">{{content}}</div>
+  <div v-cloak id="myapp">
+    <ul>
+      <li v-for="d in d1">{{d}}</li>
+      <li v-for="(k,d) in d2">{{k}} - {{d}}</li>
+      <li v-for="(d,index) in d3">{{index}} - {{d.name}} - {{d.score}}</li>
+    </ul>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
     setTimeout(() => {
       const vm = new Vue({
-        el: '#mycounter',
+        el: '#myapp',
         data: {
-          content: 'Title',
-          isRed: true,
-          isBold: true
-        },
+          d1: ['a', 'b'],
+          d2: { k1: 'v1', k2: 'v2' },
+          d3: [
+            { name: 'taguchi', score: 62 },
+            { name: 'fkoji', score: 84 }
+          ]
+        }
       })
     }, 500);
   </script>
