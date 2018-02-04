@@ -22,19 +22,22 @@
           animation: eye-move 1s infinite alternate ease-in;
         }
       </style>
+      <symbol id="robot" viewBox="0 0 160 160">
+        <rect x="0" y="0" width="160" height="160" fill="skyblue" />
+        <ellipse cx="80" cy="80" rx="50" ry="35" fill="#fff" />
+        <g class="eye">
+          <circle cx="65" cy="75" r="5" fill="skyblue" />
+          <circle cx="95" cy="75" r="5" fill="skyblue" />
+        </g>
+        <polyline points="70,35 80,45 90,35" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"></polyline>
+        <polygon points="80,80 60,140 100,140" fill="#fff" />
+        <path d="M 65,92 A 15,10 0 0 0 95,92 Z" fill="skyblue" />
+      </symbol>
     </defs>
-    <rect x="0" y="0" width="160" height="160" fill="skyblue" />
-    <ellipse cx="80" cy="80" rx="50" ry="35" fill="#fff" />
-    <g class="eye">
-      <circle cx="65" cy="75" r="5" fill="skyblue" />
-      <circle cx="95" cy="75" r="5" fill="skyblue" />
-    </g>
-    <polyline points="70,35 80,45 90,35" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"></polyline>
-    <polygon points="80,80 60,140 100,140" fill="#fff" />
-    <!-- M = moveTo, A = arcTo
-         1つ目の0 = 回転角, 2つ目の0 = 長い方の円弧/短い方の円弧, 3つ目の0 = 時計回り/反時計回り
-    -->
-    <path d="M 65,92 A 15,10 0 0 0 95,92 Z" fill="skyblue" />
+    <use href="#robot" x="0" y="0" width="80" height="80" />
+    <use href="#robot" x="80" y="0" width="80" height="80" />
+    <use href="#robot" x="0" y="80" width="80" height="80" />
+    <use href="#robot" x="80" y="80" width="80" height="80" />
   </svg>
 
 </body>
