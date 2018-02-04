@@ -10,10 +10,25 @@
 
 <body>
   <svg width="160" height="160">
+    <defs>
+      <style>
+        @keyframes eye-move {
+          to {
+            transform: translateX(-3px)
+          }
+        }
+
+        .eye {
+          animation: eye-move 1s infinite alternate ease-in;
+        }
+      </style>
+    </defs>
     <rect x="0" y="0" width="160" height="160" fill="skyblue" />
     <circle cx="80" cy="80" r="40" fill="gold" />
-    <circle cx="65" cy="75" r="5" fill="#fff" />
-    <circle cx="95" cy="75" r="5" fill="#fff" />
+    <g class="eye">
+      <circle cx="65" cy="75" r="5" fill="#fff" />
+      <circle cx="95" cy="75" r="5" fill="#fff" />
+    </g>
     <line x1="65" y1="95" x2="95" y2="95" stroke="#fff" stroke-width="5" stroke-linecap="round" />
   </svg>
 
