@@ -24,12 +24,17 @@
       </style>
     </defs>
     <rect x="0" y="0" width="160" height="160" fill="skyblue" />
-    <circle cx="80" cy="80" r="40" fill="gold" />
+    <ellipse cx="80" cy="80" rx="50" ry="35" fill="#fff" />
     <g class="eye">
-      <circle cx="65" cy="75" r="5" fill="#fff" />
-      <circle cx="95" cy="75" r="5" fill="#fff" />
+      <circle cx="65" cy="75" r="5" fill="skyblue" />
+      <circle cx="95" cy="75" r="5" fill="skyblue" />
     </g>
-    <line x1="65" y1="95" x2="95" y2="95" stroke="#fff" stroke-width="5" stroke-linecap="round" />
+    <polyline points="70,35 80,45 90,35" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"></polyline>
+    <polygon points="80,80 60,140 100,140" fill="#fff" />
+    <!-- M = moveTo, A = arcTo
+         1つ目の0 = 回転角, 2つ目の0 = 長い方の円弧/短い方の円弧, 3つ目の0 = 時計回り/反時計回り
+    -->
+    <path d="M 65,92 A 15,10 0 0 0 95,92 Z" fill="skyblue" />
   </svg>
 
 </body>
