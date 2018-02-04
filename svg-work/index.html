@@ -34,12 +34,26 @@
           stroke: #fff;
           animation: text-move 3s ease-out;
           stroke-dasharray: 300;
+          transition: .6s ease-out;
+          cursor: pointer;
+        }
+
+        .my-text.moved {
+          transform: translateX(80px)
         }
       </style>
     </defs>
     <rect x="0" y="0" width="160" height="160" fill="skyblue" />
-    <text x="5" y="150" class="my-text">Hi</text>
+    <text x="5" y="150" id="target" class="my-text">Hi</text>
   </svg>
+  <script>
+    (() => {
+      'use strict';
+      document.getElementById('target').addEventListener('click', function () {
+        this.classList.add('moved')
+      })
+    })()
+  </script>
 
 </body>
 
