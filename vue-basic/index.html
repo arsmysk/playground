@@ -13,7 +13,9 @@
 
 <body>
   <div id="myapp">
-    <div>{{$data | json}}</div>
+    side:
+    <input type="text" v-model="side"> area:
+    <input type="text" v-model="area">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -21,8 +23,17 @@
     const vm = new Vue({
       el: '#myapp',
       data: {
-        msg: 'hello',
-        price: 2314341
+        side: 20
+      },
+      computed: {
+        area: {
+          get: function () {
+            return this.side * this.side
+          },
+          set: function (v) {
+            this.side = Math.sqrt(v)
+          }
+        }
       }
     })
   </script>
