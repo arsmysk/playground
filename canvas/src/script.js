@@ -1,7 +1,8 @@
 
 
 class RandomBall {
-  constructor(x, y, xSpeed, ySpeed) {
+  constructor(ctx, x, y, xSpeed, ySpeed) {
+    this.ctx = ctx
     this.x = x
     this.y = y
     this.xSpeed = xSpeed
@@ -9,7 +10,6 @@ class RandomBall {
   }
 
   draw() {
-    ctx.clearRect(0, 0, elm.width, elm.height)
     ctx.beginPath()
     ctx.arc(this.x, this.y, 50, 0, Math.PI * 2)
     ctx.globalAlpha = 0.5
@@ -29,20 +29,11 @@ class RandomBall {
   }
 
   render() {
+    console.log(this)
     this.draw()
     this.updatePosition()
-
-    /** 再帰的に実行 */
-    requestAnimationFrame(this.render())
   }
 }
 
 let elm = document.getElementById('canvas')
 let ctx = canvas.getContext('2d')
-
-elm.width = window.innerWidth
-elm.height = window.innerHeight
-
-const randomBall = new RandomBall(100, 100, 5, 5)
-
-randomBall.render()
