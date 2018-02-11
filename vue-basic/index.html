@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="myapp">
+    side:
+    <input type="text" v-model="side"> area:
+    <input type="text" v-model="area">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    const vm = new Vue({
+      el: '#myapp',
+      data: {
+        side: 20
+      },
+      computed: {
+        area: {
+          get: function () {
+            return this.side * this.side
+          },
+          set: function (v) {
+            this.side = Math.sqrt(v)
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
