@@ -1,0 +1,37 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run watch",
+    "style": "npm run style:build && npm run style:watch",
+    "build:style": "node-sass --include-path src/style -o public/style -r src/style --output-style compressed",
+    "watch:style": "node-sass --include-path src/style -o public/style -wr src/style --output-style compressed",
+    "build:script": "webpack",
+    "watch:script": "webpack -w",
+    "build": "npm-run-all build:*",
+    "watch": "npm-run-all watch:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsmysk/playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arsmysk/playground/issues"
+  },
+  "homepage": "https://github.com/arsmysk/playground#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "flipping": "^0.8.0"
+  }
+}

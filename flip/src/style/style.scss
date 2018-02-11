@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import 'math';
+
+$gemstones:
+  'garnet',
+  'amethyst',
+  'aquamarine',
+  'diamond',
+  'emerald',
+  'alexandrite',
+  'ruby',
+  'peridot',
+  'sapphire',
+  'tourmaline',
+  'topaz',
+  'turquoise';
+
+@each $gemstone in $gemstones {
+  [data-state="#{$gemstone}"] .gemstone:not(##{$gemstone}) {
+    display: none;
+  }
+}
+
+$tan22p5: tan(22.5deg);
+$cut: 5vmin;
+
+#stone {
+  margin-top: 5vh;
+  height: 2 * $cut / $tan22p5;
+  width: 2 * $cut / $tan22p5;
+  $r: 360deg / 8;
+
+  .cut {
+    transform: rotate(#{$r});
+  }
+
+  > .cut {
+    transition-delay: 70ms;
+    > .cut {
+      transition-delay: 140ms;
+      > .cut {
+        transition-delay: 210ms;
+        > .cut {
+          transition-delay: 280ms;
+        }
+      }
+    }
+  }
+}
+
+.cut {
+  width: 2 * $cut;
+  height: 100%;
+  left: calc(50% - #{$cut});
+  background-color: var(--color);
+  mix-blend-mode: screen; // I fucking love this property
+
+  &, &:before, &:after {
+    transition: all .6s cubic-bezier(.5, 0, .5, 1);
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &:before {
+    box-shadow: 0 0 $cut * 2 var(--color);
+    z-index: -1;
+    opacity: 0.2;
+  }
+
+  &:after {
+    border: 2px solid rgba(white, 0.5);
+    mix-blend-mode: soft-light;
+  }
+}
+
+span {
+  display: inline-block;
+  // will-change: transform;
+}
+
+.month {
+  font-size: 3vmin;
+  letter-spacing: 1vmin;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.gem {
+  font-size: 10vmin;
+  font-family: PT Serif, serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #191919;
+  color: white;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
