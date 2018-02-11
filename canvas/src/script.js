@@ -37,14 +37,3 @@ class RandomBall {
 
 let elm = document.getElementById('canvas')
 let ctx = canvas.getContext('2d')
-
-elm.width = window.innerWidth
-elm.height = window.innerHeight
-
-const render = () => {
-  ctx.clearRect(0, 0, elm.width, elm.height)
-  const randomBall = new RandomBall(ctx, 100, 100, 5, 5)
-  requestAnimationFrame.bind(this, randomBall.render)
-}
-
-render()
